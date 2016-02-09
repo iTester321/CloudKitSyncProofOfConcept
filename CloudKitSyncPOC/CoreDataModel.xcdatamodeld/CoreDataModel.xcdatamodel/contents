@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+    <entity name="Bus" representedClassName=".Bus" syncable="YES">
+        <attribute name="added" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="bus" inverseEntity="Note" syncable="YES"/>
+    </entity>
+    <entity name="Car" representedClassName=".Car" syncable="YES">
+        <attribute name="added" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="car" inverseEntity="Note" syncable="YES"/>
+    </entity>
+    <entity name="DeletedCloudKitObject" representedClassName=".DeletedCloudKitObject" syncable="YES">
+        <attribute name="recordID" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="recordType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Note" representedClassName=".Note" syncable="YES">
+        <attribute name="added" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Bus" inverseName="notes" inverseEntity="Bus" syncable="YES"/>
+        <relationship name="car" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="notes" inverseEntity="Car" syncable="YES"/>
+        <relationship name="truck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Truck" inverseName="notes" inverseEntity="Truck" syncable="YES"/>
+    </entity>
+    <entity name="Truck" representedClassName=".Truck" syncable="YES">
+        <attribute name="added" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="recordName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="truck" inverseEntity="Note" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Bus" positionX="232" positionY="-94" width="128" height="135"/>
+        <element name="Car" positionX="-56" positionY="-243" width="128" height="135"/>
+        <element name="Note" positionX="-63" positionY="-45" width="128" height="165"/>
+        <element name="Truck" positionX="-308" positionY="-94" width="128" height="135"/>
+        <element name="DeletedCloudKitObject" positionX="-416" positionY="-324" width="128" height="73"/>
+    </elements>
+</model>
